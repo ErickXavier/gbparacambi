@@ -1,9 +1,31 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-Bold/Oswald-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
 :root {
   --primary-color: #000000;
   --secondary-color: #ffffff;
   --accent-color: #f7f7f7;
   --text-color: #333333;
   --heading-font: 'Oswald', sans-serif;
+}
+
+.construction-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+
+    gap: 30px;
+
+    h1 {
+      font-size: 56px;
+      margin: 0;
+    }
 }
 
 * {
@@ -111,8 +133,9 @@ nav {
 
 /* Hero Section */
 .hero {
+
   padding: 64px 32px;
-  max-width: 1200px;
+  max-width: var(--site-width);
   margin: 0 auto;
 }
 
@@ -138,11 +161,11 @@ h1 {
 .hero-card {
   background: url('photos/tournament-2.png')
     center/cover;
-  border-radius: 20px;
-  height: 500px;
+  border-radius: var(--border-radius);
+  height: 400px;
   position: relative;
   overflow: hidden;
-  max-width: 800px;
+  max-width: var(--site-width);
   margin: 0 auto;
   text-wrap: balance;
 }
@@ -196,15 +219,63 @@ h1 {
 }
 
 .mission p {
-  max-width: 800px;
+  max-width: var(--site-width);
   margin: 0 auto 32px;
 }
 
-/* Trainings Section */
-.trainings {
+/* Who can practice Section */
+.who-can-practice {
   padding: 64px 32px;
-  max-width: 1200px;
+  max-width: var(--site-width);
   margin: 0 auto;
+
+  .card {
+    border-radius: var(--border-radius);
+    height: 150px;
+    max-width: var(--site-width);
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    img {
+      width: 100%;
+      height: fit-content;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+
+      &.kids {
+        top: -50px;
+      }
+
+      &.woman {
+        top: -40px;
+      }
+
+      &.everyone {
+        top: -40px;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-family: var(--heading-font);
+      letter-spacing: -1px;
+      color: var(--secondary-color);
+      text-shadow: 1px 1px 5px rgba(0,0,0,.3);
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+    }
+  }
 }
 
 .section-header {
