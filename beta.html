@@ -86,19 +86,29 @@
           <!-- <a href="#all" class="see-all">VER TODOS</a> -->
         </div>
         <div class="card">
-          <img class="kids" src="photos/kids.png">
+          <img class="kids" src="photos/kids.png" />
           <h3>Crianças</h3>
         </div>
         <div class="card">
-          <img class="woman" src="photos/woman.png">
+          <img class="woman" src="photos/woman.png" />
           <h3>Mulheres</h3>
         </div>
         <div class="card">
-          <img class="everyone" src="photos/team-2.png">
+          <img class="everyone" src="photos/team-2.png" />
           <h3>Todo mundo pode treinar</h3>
         </div>
       </section>
     </main>
     <script src="menu.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 0) {
+          header.classList.add("shadow");
+        } else {
+          header.classList.remove("shadow");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'Oswald';
-    src: url('fonts/Oswald-Bold/Oswald-Bold.ttf') format('truetype');
-    font-weight: 700;
+  font-family: "Oswald";
+  src: url("fonts/Oswald-Bold/Oswald-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 :root {
@@ -9,25 +9,25 @@
   --secondary-color: #ffffff;
   --accent-color: #f7f7f7;
   --text-color: #333333;
-  --heading-font: 'Oswald', sans-serif;
+  --heading-font: "Oswald", sans-serif;
   --border-radius: 40px;
   --site-width: 800px;
 }
 
 .construction-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
 
-    gap: 30px;
+  gap: 30px;
 
-    h1 {
-      font-size: 56px;
-      margin: 0;
-    }
+  h1 {
+    font-size: 56px;
+    margin: 0;
+  }
 }
 
 * {
@@ -37,7 +37,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
@@ -50,6 +50,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+header.shadow {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 32px;
 }
 
 nav {
@@ -138,7 +145,6 @@ nav {
 
 /* Hero Section */
 .hero {
-
   padding: 64px 32px;
   max-width: var(--site-width);
   margin: 0 auto;
@@ -164,8 +170,7 @@ h1 {
 }
 
 .hero-card {
-  background: url('photos/tournament-2.png')
-    center/cover;
+  background: url("photos/tournament-2.png") center/cover;
   border-radius: var(--border-radius);
   height: 400px;
   position: relative;
@@ -247,7 +252,6 @@ h1 {
       margin-bottom: 0;
     }
 
-
     img {
       width: 100%;
       height: fit-content;
@@ -274,7 +278,7 @@ h1 {
       font-family: var(--heading-font);
       letter-spacing: -1px;
       color: var(--secondary-color);
-      text-shadow: 1px 1px 5px rgba(0,0,0,.3);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
       text-transform: uppercase;
       position: absolute;
       bottom: 20px;
