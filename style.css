@@ -10,6 +10,8 @@
   --accent-color: #f7f7f7;
   --text-color: #333333;
   --heading-font: 'Oswald', sans-serif;
+  --border-radius: 40px;
+  ---site-width: 800px;
 }
 
 .construction-page {
