@@ -132,10 +132,11 @@ h1 {
   text-align: center;
   font-family: var(--heading-font);
   letter-spacing: -5px;
+  text-wrap: balance;
 }
 
 .hero-card {
-  background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+  background: url('photos/tournament-2.png')
     center/cover;
   border-radius: 20px;
   height: 500px;
@@ -143,6 +144,7 @@ h1 {
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
+  text-wrap: balance;
 }
 
 .hero-text {
@@ -177,6 +179,7 @@ h1 {
   text-align: center;
   padding: 64px 32px;
   background: var(--accent-color);
+  text-wrap: balance;
 }
 
 .star-divider {
