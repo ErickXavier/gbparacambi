@@ -47,6 +47,9 @@ body {
 header {
   padding: 24px 32px;
   background: var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 nav {
