@@ -11,30 +11,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <!-- fonts -->
+    <!-- Ícones e favicons -->
     <meta name="msapplication-TileImage" content="android-chrome-512x512.png" />
     <link rel="icon" href="android-chrome-512x512.png" sizes="512x512" />
     <link rel="icon" href="android-chrome-192x192.png" sizes="192x192" />
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="favicon-16x16.png" sizes="16x16" />
-    <link
-      rel="icon"
-      rel="apple-touch-icon"
-      href="apple-touch-icon.png"
-      sizes="180x180"
-    />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header>
       <nav>
         <div class="logo-container">
-          <img
-            src="logo.png"
-            alt="Gracie Barra Paracambi Logo"
-            class="logo-img"
-          />
-          <div class="logo">GRACIE BARRA PARACAMBI</div>
+          <a href="#">
+            <img
+              src="logo.png"
+              alt="Gracie Barra Paracambi Logo"
+              class="logo-img"
+            /></a>
+            <div class="logo"><a href="#">GRACIE BARRA PARACAMBI</a></div>
         </div>
         <button class="mobile-menu-button" aria-label="Menu">
           <span></span>
@@ -42,101 +38,181 @@
           <span></span>
         </button>
         <div class="nav-links">
-          <a href="#about">Sobre</a>
-          <a href="#training">Treinos</a>
-          <a href="#testimonials">Depoimentos</a>
-          <a href="#contact">Contato</a>
-          <a href="#join" class="join-button">MATRICULE-SE</a>
+          <a href="#para-todos">Para Todos</a>
+          <a href="#grade">Grade de Aula</a>
+          <a href="#metodologia">Metodologia</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#contato" class="join-button">MATRICULE-SE</a>
         </div>
       </nav>
     </header>
 
     <main>
+      <!-- Seção Hero -->
       <section class="hero">
         <p class="subtitle">ALCANCE SEUS OBJETIVOS</p>
         <h1>ENCONTRE A SUA FORÇA</h1>
-
         <div class="hero-card">
           <div class="hero-text">
             <h2>DENTRO E FORA.</h2>
             <p>
-              Estamos dedicados a ajudar você a alcançar seus objetivos e
-              melhorar sua saúde e bem-estar geral.
+              Estamos dedicados a ajudar você a alcançar seus objetivos e melhorar
+              sua saúde e bem-estar geral.
             </p>
-            <!-- <span class="duration">3 min</span> -->
           </div>
         </div>
       </section>
 
-      <section class="mission">
-        <div class="star-divider">★</div>
-        <h2>FITNESS DEVE SER ACESSÍVEL PARA TODOS.</h2>
-        <p>
-          Seja você um atleta experiente ou está apenas começando, temos uma
-          variedade de equipamentos e aulas para atender às suas necessidades.
-          Nossas áreas de treino cardio, musculação e treino funcional
-          proporcionam uma experiência completa de workout.
-        </p>
-        <a href="#join" class="join-button">MATRICULE-SE HOJE</a>
-      </section>
-
-      <section class="who-can-practice">
-        <div class="section-header">
-          <h2>Quem pode praticar?</h2>
-          <!-- <a href="#all" class="see-all">VER TODOS</a> -->
-        </div>
-        <div class="card">
-          <img class="kids" src="photos/kids.png" />
-          <h3>Crianças</h3>
-        </div>
-        <div class="card">
-          <img class="woman" src="photos/woman.png" />
-          <h3>Mulheres</h3>
-        </div>
-        <div class="card">
-          <img class="everyone" src="photos/team-2.png" />
-          <h3>Todo mundo pode treinar</h3>
+      <!-- Seção: JIU-JITSU PARA TODOS (Fundo Cinza - var(--accent-color)) -->
+      <section class="mission" id="para-todos">
+        <div class="mission-content">
+          <h2>JIU-JITSU PARA TODOS</h2>
+          <p class="paragraph-1">
+            Acreditamos que o jiu-jitsu é uma arte acessível a todos, independentemente da idade ou experiência. Nossa metodologia estruturada e acolhedora garante um ensino de qualidade, onde cada aula promove não só técnicas aprimoradas, mas também valores como respeito, disciplina e autoconhecimento. Convidamos você a descobrir um universo de possibilidades e a iniciar sua jornada de transformação pessoal.
+          </p>
+          <img class="kids-mission" src="photos/kids.png" alt="Crianças praticando Jiu-Jitsu" />
+          <p class="paragraph-2">
+            Descubra o poder do jiu-jitsu em um ambiente onde o crescimento pessoal e o espírito de comunidade se encontram. Oferecemos aulas experimentais gratuitas, pensadas para receber crianças, jovens e adultos, permitindo que cada aluno encontre seu ritmo e potencial. Venha fazer parte da família Gracie Barra, treine conosco e sinta a energia de uma prática que transforma vidas. Junte-se a nós nessa jornada de autoconhecimento e superação!
+          </p>
         </div>
       </section>
 
-      <section class="">
-        <div class="section-header">
-            <h2>Jiu-Jitsu pra todos</h2>
-          </div>
-      </section>
-      
-      <section class="">
-        <div class="section-header">
-            <h2>Grade de Aula</h2>
-          </div>
-      </section>
-
-      <section class="">
-        <div class="section-header">
-            <h2>Legado e Valores GB</h2>
-          </div>
-      </section>
-
-      <section class="">
-        <div class="section-header">
-            <h2>Metodologia / Currículo e Programas de Treino</h2>
-          </div>
+      <!-- Seção: Valores e Legado (Fundo Branco - var(--secondary-color)) -->
+      <section class="legacy">
+        <div class="legacy-content">
+          <h2>VALORES E LEGADO</h2>
+          <p>
+            Gracie Barra é muito mais que uma escola de Jiu-Jitsu; é uma família construída sobre valores sólidos e um legado inspirador. Fundada e guiada pelo Mestre Carlos Gracie Jr., a filosofia GB tem como pilares a integridade, a irmandade e a expansão. Cada praticante é incentivado a desenvolver não apenas suas habilidades na arte suave, mas também seu potencial humano, honrando as tradições e os ensinamentos dos pioneiros – desde Mitsuyo Maeda e Carlos Gracie Sr. até Hélio Gracie, Rolls Gracie e, hoje, Carlos Gracie Jr.
+          </p>
+          <p>
+            O Escudo Vermelho é o símbolo que une toda a comunidade GB. Ele representa a paixão, a dedicação e o compromisso com a excelência que se refletem em cada treino, competição e ação comunitária. Vestir a camisa vermelha é afirmar a identidade da Família GB, demonstrando lealdade, união e o desejo de levar adiante um legado que transforma vidas.
+          </p>
+          <p>
+            A essência do legado GB também se manifesta na gratidão e na valorização da história. As imagens e homenagens presentes em cada escola contam a trajetória do Jiu-Jitsu no Brasil, celebrando a memória dos grandes mestres que fizeram da arte um meio de transformação social e pessoal.
+          </p>
+          <p>
+            Em suma, os valores e o legado da Gracie Barra se entrelaçam para formar uma cultura de respeito, ética e crescimento contínuo, onde cada treino é uma oportunidade de evoluir e contribuir para uma história que já ultrapassa gerações. Vestir o vermelho é, portanto, celebrar e perpetuar uma família que transforma vidas através do Jiu-Jitsu.
+          </p>
+          <p>Conheça mais: <a href="https://graciebarra.com.br/sobre/#gb_values" target="_blank">graciebarra.com.br</a></p>
+        </div>
       </section>
 
-      <section class="">
-        <div class="section-header">
-            <h2>Nossos Instrutores</h2>
-          </div>
+      <!-- Seção: Grade de Aula -->
+      <section class="schedule" id="grade">
+        <div class="schedule-content">
+          <h2>GRADE DE AULA</h2>
+          <p>Confira a programação de aulas para crianças e adultos.</p>
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Dia da Semana</th>
+                <th>Aulas Crianças</th>
+                <th>Aulas Adultos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Segunda-feira</td>
+                <td>16:00 - 17:00</td>
+                <td>18:00 - 19:30</td>
+              </tr>
+              <tr>
+                <td>Terça-feira</td>
+                <td>16:00 - 17:00</td>
+                <td>18:00 - 19:30</td>
+              </tr>
+              <tr>
+                <td>Quarta-feira</td>
+                <td>16:00 - 17:00</td>
+                <td>18:00 - 19:30</td>
+              </tr>
+              <tr>
+                <td>Quinta-feira</td>
+                <td>16:00 - 17:00</td>
+                <td>18:00 - 19:30</td>
+              </tr>
+              <tr>
+                <td>Sexta-feira</td>
+                <td>16:00 - 17:00</td>
+                <td>18:00 - 19:30</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>09:00 - 10:00</td>
+                <td>10:30 - 12:00</td>
+              </tr>
+              <tr>
+                <td>Domingo</td>
+                <td>Fechado</td>
+                <td>Fechado</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="schedule-note">* Os horários são apenas exemplificativos e poderão ser alterados.</p>
+        </div>
       </section>
 
-      <section class="">
-        <div class="section-header">
-            <h2>Fale conosco</h2>
+      <!-- Seção: Metodologia / Currículo e Programas de Treino -->
+      <section class="curriculum" id="metodologia">
+        <div class="curriculum-content">
+          <h2>METODOLOGIA / CURRÍCULO E PROGRAMAS DE TREINO</h2>
+          <p>
+            A Gracie Barra segue uma metodologia consagrada mundialmente que prioriza a evolução técnica e o desenvolvimento integral dos praticantes. Nosso currículo é estruturado para atender desde iniciantes até alunos avançados, oferecendo um aprendizado progressivo que alia tradição e inovação.
+          </p>
+          <p>
+            As aulas são divididas em módulos que contemplam:
+          </p>
+          <ul>
+            <li><strong>Fundamentos do Jiu-Jitsu:</strong> Técnicas básicas, posturas, movimentos e defesas essenciais.</li>
+            <li><strong>Técnicas Avançadas:</strong> Transições, finalizações e estratégias para competição.</li>
+            <li><strong>Programas Específicos:</strong> Aulas diferenciadas para crianças, jovens e adultos, visando o desenvolvimento físico e mental.</li>
+            <li><strong>Treinamento Funcional:</strong> Exercícios complementares para aprimorar o condicionamento, a força e a flexibilidade.</li>
+          </ul>
+          <p>
+            Nosso programa é constantemente revisado e atualizado, garantindo que cada aluno evolua com segurança e eficácia, dentro de um ambiente que valoriza o respeito, a disciplina e a superação.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção: Nossos Instrutores -->
+      <section class="instructors" id="equipe">
+        <div class="instructors-content">
+          <h2>NOSSA EQUIPE</h2>
+          <p>
+            Conheça a equipe de instrutores experientes e dedicados da Gracie Barra, que se comprometem a transmitir não apenas as técnicas do Jiu-Jitsu, mas também valores como respeito, disciplina e espírito de equipe.
+          </p>
+          <div class="instructors-grid">
+            <div class="instructor-card">
+              <img src="photos/michel-xavier.png" alt="Instrutor Michel Xavier" />
+              <h3>Michel Xavier</h3>
+              <p>Com mais de 10 anos de experiência, Michel é especialista em fundamentos e técnicas avançadas, preparando alunos para a competição e a defesa pessoal.</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <footer id="contact-form">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>Fale Conosco</h3>
+          <p>
+            Venha conhecer nossa academia, faça um treino experimental e descubra o poder do Jiu-Jitsu.
+          </p>
+        </div>
+        <div class="footer-right">
+          <form action="https://wa.me/5521999999999" method="get" target="_blank">
+            <input type="text" name="name" placeholder="Nome" required />
+            <textarea name="message" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
     <script src="menu.js"></script>
     <script>
+      // Efeito de sombra no header
       window.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         if (window.scrollY > 0) {
@@ -144,6 +220,15 @@
         } else {
           header.classList.remove("shadow");
         }
+      });
+      
+      // Tratamento do formulário de contato
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = this.name.value;
+        const message = this.message.value;
+        const whatsappLink = `https://wa.me/5521999999999?text=Bom%20dia,%20sou%20${encodeURIComponent(name)}.%20${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
       });
     </script>
   </body>
