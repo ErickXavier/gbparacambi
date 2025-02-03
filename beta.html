@@ -192,7 +192,7 @@
       </section>
     </main>
 
-    <footer id="contact-form">
+    <footer id="contato">
       <div class="footer-container">
         <div class="footer-left">
           <h3>Fale Conosco</h3>
@@ -201,9 +201,9 @@
           </p>
         </div>
         <div class="footer-right">
-          <form action="https://wa.me/5521999999999" method="get" target="_blank">
+          <form id="contact-form" action="https://wa.me/5521987864399" method="get" target="_blank">
             <input type="text" name="name" placeholder="Nome" required />
-            <textarea name="message" placeholder="Mensagem" required></textarea>
+            <textarea name="message" placeholder="Mensagem" required>Eu gostaria de saber mais sobre o curso.</textarea>
             <button type="submit">Enviar</button>
           </form>
         </div>
@@ -227,7 +227,7 @@
         event.preventDefault();
         const name = this.name.value;
         const message = this.message.value;
-        const whatsappLink = `https://wa.me/5521999999999?text=Bom%20dia,%20sou%20${encodeURIComponent(name)}.%20${encodeURIComponent(message)}`;
+        const whatsappLink = `https://wa.me/5521987864399?text=Bom%20dia,%20sou%20${encodeURIComponent(name)}.%20${encodeURIComponent(message)}`;
         window.open(whatsappLink, '_blank');
       });
     </script>
