@@ -5,17 +5,17 @@
 }
 
 :root {
-  --primary-color: #000000;
-  --secondary-color: #ffffff;
+  --primary-color: #000;
+  --secondary-color: #fff;
   --accent-color: #f7f7f7;
-  --text-color: #333333;
+  --text-color: #333;
   --heading-font: "Oswald", sans-serif;
   --border-radius: 40px;
-  --site-width: 800px;
+  --site-width: 900px;
   --link-color: #1a1a1a;
 }
 
-/* Global resets */
+/* Global Resets */
 * {
   margin: 0;
   padding: 0;
@@ -40,13 +40,18 @@ h2 {
   letter-spacing: -3.5px;
 }
 
-/* section {
-  position: sticky;
-  top: 64px;
-  left: 0;
-} */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
 
-/* In case you use a construction page */
+  &:hover {
+    color: #333;
+  }
+}
+
+/* Construction Page */
 .construction-page {
   display: flex;
   flex-direction: column;
@@ -55,11 +60,11 @@ h2 {
   height: 100vh;
   text-align: center;
   gap: 30px;
-}
 
-.construction-page h1 {
-  font-size: 56px;
-  margin: 0;
+  h1 {
+    font-size: 56px;
+    margin: 0;
+  }
 }
 
 /* Header and Navigation */
@@ -71,88 +76,80 @@ header {
   z-index: 1;
   transition: all 0.3s ease;
   box-shadow: none;
-}
 
-header.shadow {
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
-  padding: 10px 32px;
-}
+  &.shadow {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 32px;
+  }
 
-header nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
-.logo-img {
-  width: 48px;
-  height: 48px;
-}
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      vertical-align: middle;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: -1.5px;
-  font-family: var(--heading-font);
-}
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: -1.5px;
+      font-family: var(--heading-font);
 
-.mobile-menu-button {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 100;
-}
+      &.mobile {
+        display: none;
+      }
+    }
+  }
 
-.mobile-menu-button span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--primary-color);
-  margin: 5px 0;
-  transition: transform 0.3s, opacity 0.3s;
-}
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 100;
 
-.mobile-menu-button.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--primary-color);
+      margin: 5px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
 
-.mobile-menu-button.active span:nth-child(2) {
-  opacity: 0;
-}
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
+    }
+  }
 
-.mobile-menu-button.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a {
-  font-weight: 700;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #333;
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
 }
 
 /* Join Button */
@@ -165,36 +162,55 @@ a {
   font-weight: bold;
   transition: background-color 0.3s;
   white-space: nowrap;
+
+  &:hover {
+    background-color: #333;
+  }
 }
 
-.join-button:hover {
-  background-color: #333;
+section {
+  padding: 64px 32px;
+  margin: 0 auto;
+  text-align: center;
+  /* & every second has grey background */
+  &:nth-child(even) {
+    background: var(--accent-color);
+  }
+
+  p {
+    max-width: 900px;
+    margin: 16px auto 16px;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+
 }
 
 /* Hero Section */
-.hero {
-  padding: 64px 32px;
+section.hero {
   max-width: var(--site-width);
+  padding: 64px 32px;
   margin: 0 auto;
-}
 
-.hero .subtitle {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  text-align: center;
-  font-weight: bold;
-}
+  .subtitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: bold;
+  }
 
-.hero h1 {
-  font-size: 130px;
-  line-height: 1.1;
-  font-weight: 700;
-  margin-bottom: 48px;
-  text-align: center;
-  font-family: var(--heading-font);
-  letter-spacing: -5px;
-  /* text-wrap: balance;  Removido se necessário para evitar conflitos */
+  h1 {
+    font-size: 130px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 48px;
+    text-align: center;
+    font-family: var(--heading-font);
+    letter-spacing: -5px;
+    text-wrap: balance;
+  }
 }
 
 .hero-card {
@@ -205,24 +221,28 @@ a {
   overflow: hidden;
   max-width: var(--site-width);
   margin: 0 auto;
-}
 
-.hero-card .hero-text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 32px;
-  color: var(--secondary-color);
-  max-width: 50%;
-  text-align: right;
-}
+  .hero-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 32px;
+    color: var(--secondary-color);
+    max-width: 50%;
+    text-align: right;
 
-.hero-card .hero-text h2 {
-  font-size: 72px;
-  line-height: 1;
-  margin-bottom: 16px;
-  font-family: var(--heading-font);
-  letter-spacing: -4px;
+    h2 {
+      font-size: 72px;
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: var(--heading-font);
+      letter-spacing: -4px;
+    }
+    p {
+      font-size: 16px;
+      text-align: right;
+    }
+  }
 }
 
 .duration {
@@ -235,259 +255,262 @@ a {
 }
 
 /* Mission Section (JIU-JITSU PARA TODOS) */
-.mission {
-  background: var(--accent-color);
-  padding: 64px 32px;
-  text-align: center;
+section.mission {
+
+  .mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    h2 {
+      grid-column: 1 / 3;
+      text-align: center;
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-family: var(--heading-font);
+      letter-spacing: -3.5px;
+    }
+
+    p {
+      &:last-child {
+        grid-column: 1 / 3;
+      }
+    }
+
+    .kids-mission {
+      grid-column: 2 / 3;
+      width: calc(900px / 2);
+      height: 200px;
+      border-radius: var(--border-radius);
+      object-fit: cover;
+    }
+  }
 }
 
-.mission-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 32px;
-  max-width: 800px;
-  margin: 0 auto;
+/* Legacy Section */
+section.legacy {
+
+  .legacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-family: var(--heading-font);
+      letter-spacing: -3.5px;
+    }
+  }
 }
 
-.mission-content h2 {
-  grid-column: 1 / 3;
-  text-align: center;
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  font-family: var(--heading-font);
-  letter-spacing: -3.5px;
+/* Schedule Section */
+section.schedule {
+
+  .schedule-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+
+      small {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      img {
+        max-width: 100px;
+      }
+    }
+
+    th {
+      background: var(--primary-color);
+      color: var(--secondary-color);
+    }
+  }
+
+  .schedule-note {
+    font-size: 14px;
+    color: #666;
+  }
+
+  ul.schedule-legend {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 900px;
+
+    li {
+      display: flex;
+      text-align: left;
+      border: 1px solid #ccc;
+      padding: 8px;
+      gap: 10px;
+      font-size: 12px;
+      align-items: center;
+
+      img {
+        max-width: 100px;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
-.mission-content p {
-  max-width: 800px;
-  margin: 0 auto 32px;
-  text-align: left;
-  line-height: 1.6;
+/* Curriculum Section */
+section.curriculum {
+
+  .curriculum-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  }
 }
 
+/* Instructors Section */
+section.instructors {
 
-.mission-content p:last-child {
-  grid-column: 1 / 3;
-}
+  .instructors-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
-.mission-content .kids-mission {
-  grid-column: 2 / 3;
-  width: 340px;
-  height: 200px;
-  border-radius: var(--border-radius);
-  object-fit: cover;
-}
+  .instructors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 32px;
 
-/* Seção: Valores e Legado */
-.legacy {
-  background: var(--secondary-color);
-  padding: 64px 32px;
-  text-align: center;
-}
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 
-.legacy .legacy-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
+  .instructor-card {
+    background: var(--secondary-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
 
-.legacy .legacy-content h2 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  font-family: var(--heading-font);
-  letter-spacing: -3.5px;
-}
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      max-width: 150px;
+      margin: 0 auto 16px;
+    }
 
-.legacy .legacy-content p {
-  max-width: 800px;
-  margin: 0 auto 32px;
-  text-align: left;
-  line-height: 1.6;
-}
+    h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-family: var(--heading-font);
+    }
 
-/* Seção: Grade de Aula */
-.schedule {
-  background: var(--accent-color);
-  padding: 64px 32px;
-  text-align: center;
-}
-
-.schedule-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 32px 0;
-}
-
-.schedule-table th,
-.schedule-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: center;
-}
-
-.schedule-table th {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.schedule-note {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Seção: Metodologia / Currículo e Programas de Treino */
-.curriculum {
-  background: var(--secondary-color);
-  padding: 64px 32px;
-  text-align: center;
-}
-
-.curriculum-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.curriculum-content ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-/* Seção: Nossos Instrutores */
-.instructors {
-  background: var(--accent-color);
-  padding: 64px 32px;
-  text-align: center;
-}
-
-.instructors-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.instructors-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  margin-top: 32px;
-}
-
-.instructor-card {
-  background: var(--secondary-color);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: center;
-  max-width: 300px;
-}
-
-.instructor-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  max-width: 150px;
-  margin: 0 auto 16px;
-}
-
-.instructor-card h3 {
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-family: var(--heading-font);
-}
-
-.instructor-card p {
-  font-size: 14px;
-  color: var(--text-color);
-}
-
-/* Section Headers for additional sections */
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.section-header h2 {
-  font-family: var(--heading-font);
-  letter-spacing: -2px;
-  font-size: 40px;
+    p {
+      font-size: 14px;
+      color: var(--text-color);
+    }
+  }
 }
 
 /* Footer */
 footer {
-  background: var(--secondary-color);
+  background: var(--accent-color);
   color: var(--primary-color);
   padding: 32px;
   text-align: center;
   width: 100%;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .footer-left {
+      flex: 1;
+      text-align: left;
+    }
+
+    .footer-right {
+      flex: 1;
+      text-align: right;
+    }
+  }
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
+/* Contact Form */
+#contato {
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 16px;
 
-.footer-container .footer-left {
-  flex: 1;
-  text-align: left;
-}
+    input,
+    textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 0;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-.footer-container .footer-right {
-  flex: 1;
-  text-align: right;
-}
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
 
-/* Formulário de Contato */
-#contato form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-  gap: 16px;
-}
+    button {
+      background: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
 
-#contato form input,
-#contato form textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: var(--text-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#contato form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-#contato form button {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-#contato form button:hover {
-  background-color: #ddd;
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
 }
 
 /* Media Queries */
@@ -497,63 +520,70 @@ footer {
     letter-spacing: -3px;
   }
 
-  .hero-text {
-    max-width: 100%;
+  section.hero {
+    .hero-text {
+      max-width: 100%;
+      padding: 16px;
+    }
   }
 
-  header .mobile-menu-button {
-    display: block;
-  }
+  header {
+    .mobile-menu-button {
+      display: block;
+    }
 
-  header .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--secondary-color);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    z-index: 90;
-  }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--secondary-color);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      z-index: 90;
 
-  header .nav-links.active {
-    display: flex;
+      &.active {
+        display: flex;
+      }
+    }
   }
 
   .logo-container {
     gap: 12px;
+
+    .logo-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .title {
+      font-size: 20px;
+
+      &.mobile {
+        display: inline !important;
+      }
+
+      &.desktop {
+        display: none;
+      }
+    }
   }
 
-  .logo-img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .hero-card .hero-text {
-    max-width: 100%;
-    padding: 16px;
-  }
-
-  /* Mobile support for section layouts */
   .mission-content {
     grid-template-columns: 1fr !important;
     gap: 16px;
+
+    > * {
+      grid-column: 1 / 1 !important;
+      max-width: 100%;
+    }
   }
 
-  .mission-content > * {
-    grid-column: 1 / 1 !important;
-    max-width: 100%;
-  }
-
-  .legacy .legacy-content,
+  .legacy,
   .curriculum-content,
   .instructors-content,
   .schedule-content {
@@ -561,31 +591,50 @@ footer {
     padding: 0 16px;
   }
 
-  .instructors-grid {
-    flex-direction: column;
-    gap: 16px;
+  section.schedule {
+  /* Ajusta o container principal para usar a largura total da tela */
+  .schedule-content {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
   }
 
-  /* Make the schedule table scrollable on small screens */
+  /* Permite que a tabela tenha scroll horizontal se necessário e reduz levemente a fonte */
   .schedule-table {
     display: block;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    font-size: 14px;
+    margin: 32px 0;
+    box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3);
   }
 
-  footer .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 16px;
-  }
-
-  footer .footer-container .footer-left,
-  footer .footer-container .footer-right {
+  /* Remove a largura fixa e adapta a grid para exibir os itens em uma coluna */
+  ul.schedule-legend {
     width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+}
+
+
+  footer {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+
+      .footer-left,
+      .footer-right {
+        width: 100%;
+      }
+    }
   }
 
-  #contato form {
-    max-width: 100% !important;
-    width: 100% !important;
+  #contato {
+    form {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
   }
 }
