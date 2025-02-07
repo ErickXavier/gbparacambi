@@ -40,11 +40,11 @@ h2 {
   letter-spacing: -3.5px;
 }
 
-section {
+/* section {
   position: sticky;
   top: 64px;
   left: 0;
-}
+} */
 
 /* In case you use a construction page */
 .construction-page {
