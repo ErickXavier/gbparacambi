@@ -487,7 +487,7 @@ footer {
 /* Media Queries */
 @media (max-width: 768px) {
   h1 {
-    font-size: 72px;
+    font-size: 72px !important;
     letter-spacing: -3px;
   }
 
@@ -529,5 +529,57 @@ footer {
 
   .logo {
     font-size: 20px;
+  }
+
+  .hero-card .hero-text {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  /* Mobile support for section layouts */
+  .mission-content {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .mission-content > * {
+    grid-column: 1 / 1 !important;
+    max-width: 100%;
+  }
+
+  .legacy .legacy-content,
+  .curriculum-content,
+  .instructors-content,
+  .schedule-content {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .instructors-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Make the schedule table scrollable on small screens */
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  footer .footer-container .footer-left,
+  footer .footer-container .footer-right {
+    width: 100%;
+  }
+
+  #contato form {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }
