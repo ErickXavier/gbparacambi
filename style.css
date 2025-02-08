@@ -63,7 +63,12 @@ a {
 
   h1 {
     font-size: 56px;
-    margin: 0;
+    line-height: 1.1;
+    font-weight: 700;
+    text-align: center;
+    font-family: var(--heading-font);
+    letter-spacing: -2px;
+    text-wrap: balance;
   }
 }
 
