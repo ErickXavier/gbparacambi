@@ -45,9 +45,9 @@ document
 
 // slideshow animation
 // Timing settings (in milliseconds)
-const fadeInDuration = 4000; // duration for fade-in (4s)
-const fadeOutDuration = 2400; // duration for fade-out (2.4s)
-const totalCycle = 16000; // full cycle time per image (16s)
+const fadeInDuration = 3000; // duration for fade-in (4s)
+const fadeOutDuration = 3000; // duration for fade-out (2.4s)
+const totalCycle = 6000; // full cycle time per image (16s)
 // The "hold" period after a transition is the remaining time:
 const holdDuration = totalCycle - Math.max(fadeInDuration, fadeOutDuration);
 
