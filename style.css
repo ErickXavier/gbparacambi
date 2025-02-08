@@ -61,6 +61,10 @@ a {
   text-align: center;
   gap: 30px;
 
+  img {
+    max-width: 150px;
+  }
+
   h1 {
     font-size: 56px;
     line-height: 1.1;
@@ -101,8 +105,8 @@ header {
     gap: 16px;
 
     .logo-img {
-      width: 48px;
-      height: 48px;
+      width: 100px;
+      height: 100px;
       vertical-align: middle;
     }
 
@@ -296,7 +300,8 @@ section.mission {
 
     .kids-mission {
       grid-column: 2 / 3;
-      width: calc(var(--site-width) / 2);
+      width: 100%;
+      max-width: calc(var(--site-width) / 2);
       height: 200px;
       border-radius: var(--border-radius);
       position: relative;
@@ -307,7 +312,7 @@ section.mission {
 
 
     img {
-      width: calc(var(--site-width) / 2);
+      width: 100%;
       height: 200px;
       object-fit: cover;
       position: absolute;
@@ -585,8 +590,8 @@ footer {
     gap: 12px;
 
     .logo-img {
-      width: 40px;
-      height: 40px;
+      width: 56px !important;
+      height: 56px !important;
     }
 
     .title {
