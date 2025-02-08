@@ -58,15 +58,7 @@ let currentIndex = 0;
 
 // Set initial inline styles on images
 images.forEach((img, idx) => {
-  img.style.position = "absolute";
-  img.style.top = "0";
-  img.style.left = "0";
-  img.style.width = "100%";
-  img.style.height = "100%";
-  img.style.objectFit = "cover";
   img.style.opacity = "0";
-  // Disable any CSS transitions so that JS controls the animation timing
-  img.style.transition = "none";
 });
 
 // Show the first image immediately
