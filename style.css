@@ -115,10 +115,6 @@ header {
       font-weight: bold;
       letter-spacing: -1.5px;
       font-family: var(--heading-font);
-
-      &.mobile {
-        display: none;
-      }
     }
   }
 
@@ -590,20 +586,12 @@ footer {
     gap: 12px;
 
     .logo-img {
-      width: 56px !important;
-      height: 56px !important;
+      width: 48px !important;
+      height: 48px !important;
     }
 
     .title {
-      font-size: 20px;
-
-      &.mobile {
-        display: inline !important;
-      }
-
-      &.desktop {
-        display: none;
-      }
+      font-size: 20px !important;
     }
   }
 
