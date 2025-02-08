@@ -178,7 +178,7 @@ section {
   }
 
   p {
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 16px auto 16px;
     text-align: left;
     line-height: 1.6;
@@ -262,7 +262,7 @@ section.mission {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 32px;
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
 
     h2 {
@@ -281,13 +281,32 @@ section.mission {
       }
     }
 
-    .kids-mission {
+    /* .kids-mission {
       grid-column: 2 / 3;
-      width: calc(900px / 2);
+      width: calc(var(--site-width) / 2);
       height: 200px;
       border-radius: var(--border-radius);
       object-fit: cover;
+    } */
+
+    .kids-mission {
+      grid-column: 2 / 3;
+      width: calc(var(--site-width) / 2);
+      height: 200px;
+      border-radius: var(--border-radius);
+      position: relative;
+      overflow: hidden;
+      margin: 20px auto;
+      background: #eee;
     }
+
+
+    img {
+      width: calc(var(--site-width) / 2);
+      height: 200px;
+      object-fit: cover;
+    }
+
   }
 }
 
@@ -295,7 +314,7 @@ section.mission {
 section.legacy {
 
   .legacy-content {
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
 
     h2 {
@@ -312,7 +331,7 @@ section.legacy {
 section.schedule {
 
   .schedule-content {
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
     text-align: center;
 
@@ -359,7 +378,7 @@ section.schedule {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    width: 900px;
+    width: var(--site-width);
 
     li {
       display: flex;
@@ -382,7 +401,7 @@ section.schedule {
 section.curriculum {
 
   .curriculum-content {
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
     text-align: left;
 
@@ -397,7 +416,7 @@ section.curriculum {
 section.instructors {
 
   .instructors-content {
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
   }
 
@@ -455,7 +474,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 900px;
+    max-width: var(--site-width);
     margin: 0 auto;
 
     .footer-left {
