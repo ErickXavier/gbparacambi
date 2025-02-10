@@ -149,10 +149,14 @@ header {
     }
   }
 
-  .nav-links {
+  ul.nav-links {
     display: flex;
     gap: 32px;
     align-items: center;
+
+    li {
+      list-style: none;
+    }
 
     a {
       font-family: 'Oswald';
@@ -586,7 +590,7 @@ footer {
       display: block;
     }
 
-    .nav-links {
+    ul.nav-links {
       display: none;
       position: fixed;
       top: 0;

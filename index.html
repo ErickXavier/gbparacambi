@@ -26,7 +26,20 @@
     <link rel="canonical" hreflang="pt-BR" href="https://gbparacambi.com.br/" />
     <link rel="alternate" hreflang="pt-BR" href="https://gbparacambi.com/" />
 
+    <!-- meta data search indexing -->
+    <meta name="author" content="Gracie Barra Paracambi" />
+    <meta name="description" content="Gracie Barra Paracambi - Jiu-Jitsu para todos. Aulas para crianças, jovens e adultos. Venha treinar conosco e descubra o poder do Jiu-Jitsu." />
+    <meta name="keywords" content="jiu-jitsu, gracie barra, paracambi, artes marciais, defesa pessoal, treino, academia, esporte, saúde, bem-estar, paracambi, lages, rj, rio de janeiro" />
+    <meta itemprop="name" content="Gracie Barra Paracambi" />
+    <meta itemprop="description" content="Gracie Barra Paracambi - Jiu-Jitsu para todos. Aulas para crianças, jovens e adultos. Venha treinar conosco e descubra o poder do Jiu-Jitsu." />
+    <meta itemprop="image" content="https://gbparacambi.com.br/photos/team.png" />
 
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="Portuguese" />
+    <meta name="distribution" content="Global" />
 
     <!-- meta social networks instagram: @gbparacambi -->
     <meta property="og:title" content="Gracie Barra Paracambi" />
@@ -48,21 +61,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
-    <!-- meta data search indexing -->
-    <meta name="author" content="Gracie Barra Paracambi" />
-    <meta name="description" content="Gracie Barra Paracambi - Jiu-Jitsu para todos. Aulas para crianças, jovens e adultos. Venha treinar conosco e descubra o poder do Jiu-Jitsu." />
-    <meta name="keywords" content="jiu-jitsu, gracie barra, paracambi, artes marciais, defesa pessoal, treino, academia, esporte, saúde, bem-estar, paracambi, lages, rj, rio de janeiro" />
-    <meta itemprop="name" content="Gracie Barra Paracambi" />
-    <meta itemprop="description" content="Gracie Barra Paracambi - Jiu-Jitsu para todos. Aulas para crianças, jovens e adultos. Venha treinar conosco e descubra o poder do Jiu-Jitsu." />
-    <meta itemprop="image" content="https://gbparacambi.com.br/photos/team.png" />
-
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="rating" content="general" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="language" content="Portuguese" />
-    <meta name="distribution" content="Global" />
-
     <!-- Fonts -->
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
@@ -79,6 +77,55 @@
     <link rel="icon" href="favicon-16x16.png" sizes="16x16" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
     <link rel="icon" href="favicon.ico" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://gbparacambi.com.br/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://gbparacambi.com.br/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Main Menu",
+          "hasPart": [
+            {
+              "@type": "SiteNavigationElement",
+              "name": "PARA TODOS",
+              "url": "https://gbparacambi.com.br/#para-todos"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "GRADE DE AULAS",
+              "url": "https://gbparacambi.com.br/#grade"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "METODOLOGIA",
+              "url": "https://gbparacambi.com.br/#metodologia"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "EQUIPE",
+              "url": "https://gbparacambi.com.br/#equipe"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "MATRICULE-SE",
+              "url": "https://gbparacambi.com.br/#contato"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
 
     <!-- Scripts -->
     <script src="scripts.js" defer></script>
@@ -105,14 +152,14 @@
           <span></span>
           <span></span>
         </button>
-        <div class="nav-links">
-          <a href="#para-todos">PARA TODOS</a>
-          <a href="#grade">GRADE DE AULAS</a>
-          <a href="#metodologia">METODOLOGIA</a>
-          <a href="#equipe">EQUIPE</a>
-          <a href="#contato" class="join-button">MATRICULE-SE</a>
-        </div>
-      </nav>
+
+        <ul class="nav-links">
+          <li><a href="#para-todos">PARA TODOS</a></li>
+          <li><a href="#grade">GRADE DE AULAS</a></li>
+          <li><a href="#metodologia">METODOLOGIA</a></li>
+          <li><a href="#equipe">EQUIPE</a></li>
+          <li><a href="#contato" class="join-button">MATRICULE-SE</a></li>
+        </ul>
     </header>
 
     <main>
