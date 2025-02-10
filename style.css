@@ -230,7 +230,7 @@ section.hero {
 }
 
 .hero-card {
-  background: url("photos/tournament-2.png") center/cover;
+  background: url("photos/tournament-2-min.png") center/cover;
   border-radius: var(--border-radius);
   height: 400px;
   position: relative;
