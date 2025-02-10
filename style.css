@@ -1,16 +1,10 @@
-@font-face {
-  font-family: "Oswald";
-  src: url("fonts/Oswald-Bold/Oswald-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
 :root {
   --primary-color: #000;
   --secondary-color: #fff;
   --accent-color: #f7f7f7;
   --text-color: #333;
   --red-color: #c43c35;
-  --heading-font: "Oswald", sans-serif;
+  --heading-font: "Oswald", "Roboto Condensed", sans-serif;
   --border-radius: 40px;
   --site-width: 900px;
   --link-color: #1a1a1a;
@@ -28,7 +22,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
 }
@@ -217,6 +211,7 @@ section.hero {
     margin-bottom: 16px;
     text-align: center;
     font-weight: bold;
+    font-family: 'Roboto Condensed';
   }
 
   h1 {
