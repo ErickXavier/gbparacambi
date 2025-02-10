@@ -359,6 +359,7 @@ section.schedule {
 
     p {
       text-align: center;
+      text-wrap: balance;
     }
   }
 
@@ -648,7 +649,6 @@ footer {
     /* Ajusta o container principal para usar a largura total da tela */
     .schedule-content {
       max-width: 100%;
-      padding: 0 16px;
       margin: 0 auto;
     }
 
