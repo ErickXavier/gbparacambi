@@ -206,7 +206,6 @@ section {
 /* Hero Section */
 section.hero {
   max-width: var(--site-width);
-  padding: 64px 32px;
   margin: 0 auto;
 
   .subtitle {
@@ -641,39 +640,35 @@ footer {
     }
   }
 
-  .legacy,
-  .curriculum-content,
-  .instructors-content,
-  .schedule-content {
+  section {
     max-width: 100%;
-    padding: 0 16px;
   }
 
   section.schedule {
-  /* Ajusta o container principal para usar a largura total da tela */
-  .schedule-content {
-    max-width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
-  }
+    /* Ajusta o container principal para usar a largura total da tela */
+    .schedule-content {
+      max-width: 100%;
+      padding: 0 16px;
+      margin: 0 auto;
+    }
 
-  /* Permite que a tabela tenha scroll horizontal se necessário e reduz levemente a fonte */
-  .schedule-table {
-    display: block;
-    overflow-x: auto;
-    font-size: 14px;
-    margin: 32px 0;
-    box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3);
-  }
+    /* Permite que a tabela tenha scroll horizontal se necessário e reduz levemente a fonte */
+    .schedule-table {
+      display: block;
+      overflow-x: auto;
+      font-size: 14px;
+      margin: 32px 0;
+      box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3);
+    }
 
-  /* Remove a largura fixa e adapta a grid para exibir os itens em uma coluna */
-  ul.schedule-legend {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 16px;
+    /* Remove a largura fixa e adapta a grid para exibir os itens em uma coluna */
+    ul.schedule-legend {
+      width: 100%;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
   }
-}
 
 
   footer {
