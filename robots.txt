@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://gbparacambi.com.br/sitemap.xml
