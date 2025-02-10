@@ -84,6 +84,11 @@ header {
   &.shadow {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     padding: 10px 32px;
+    .logo-container {
+      .logo-img {
+        width: 50px;
+      }
+    }
   }
 
   nav {
@@ -101,8 +106,9 @@ header {
 
     .logo-img {
       width: 100px;
-      height: 100px;
+      aspect-ratio: 1;
       vertical-align: middle;
+      transition: all 0.3s ease-in-out;
     }
 
     .title {
