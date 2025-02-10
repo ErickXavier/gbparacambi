@@ -9,6 +9,7 @@
   --secondary-color: #fff;
   --accent-color: #f7f7f7;
   --text-color: #333;
+  --red-color: #c43c35;
   --heading-font: "Oswald", sans-serif;
   --border-radius: 40px;
   --site-width: 900px;
@@ -158,6 +159,14 @@ header {
     display: flex;
     gap: 32px;
     align-items: center;
+
+    a {
+      font-family: 'Oswald';
+
+      &.active {
+        color: var(--red-color);
+      }
+    }
   }
 }
 
@@ -374,6 +383,11 @@ section.schedule {
 
       img {
         max-width: 100px;
+      }
+
+      &[rowspan="6"] {
+        vertical-align: top;
+        padding-top: 45px !important;
       }
     }
 
