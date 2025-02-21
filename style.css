@@ -190,6 +190,16 @@ header {
   }
 }
 
+.icon-button {
+  width: 50px;
+  height: 50px;
+  img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+}
+
 section {
   padding: 64px 32px;
   margin: 0 auto;
@@ -496,6 +506,24 @@ section.instructors {
   }
 }
 
+section.instagram {
+  .instagram-content {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+
+    iframe {
+      width: 100%;
+      max-width: var(--site-width);
+      max-height: 830px;
+      min-height: 440px;
+      aspect-ratio: 90/83;
+    }
+  }
+}
+
 /* Footer */
 footer {
   background: var(--accent-color);
@@ -675,7 +703,6 @@ footer {
       margin-top: 16px;
     }
   }
-
 
   footer {
     .footer-container {
