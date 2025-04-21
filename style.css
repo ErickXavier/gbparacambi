@@ -224,15 +224,6 @@ section.hero {
   max-width: var(--site-width);
   margin: 0 auto;
 
-  .subtitle {
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Roboto Condensed';
-  }
-
   h1 {
     font-size: 130px;
     line-height: 1.1;
