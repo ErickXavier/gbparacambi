@@ -687,6 +687,7 @@ footer {
 
   section {
     max-width: 100%;
+    padding: 64px 15px;
   }
 
   section.schedule {
@@ -701,8 +702,9 @@ footer {
       display: block;
       overflow-x: auto;
       font-size: 14px;
-      margin: 15px 0;
+      margin: 15px auto;
       /* box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3); */
+      width: max-content;
 
       th, td {
         padding: 5px;
