@@ -23,7 +23,7 @@
     "GBF": {
       "label": "GB-F: Turma 100% Feminina",
       "imagem": "GB-F.svg",
-      "description": "Turma 100% Feminina. (Horários a definir)"
+      "description": "Turma 100% Feminina.<br><small>(Horários a definir)</small>"
     },
     "NOGI": {
       "label": "GB-NoGi: Treino sem kimono",
