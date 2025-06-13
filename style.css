@@ -79,12 +79,20 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  width: 70%;
+  margin: auto;
   transition: all 0.3s;
   box-shadow: none;
+  border: 0 solid transparent;
 
   &.shadow {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 10px 32px;
+    top: 20px;
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+    margin: auto;
+    border-radius: 100px;
     .logo-container {
       .logo-img {
         width: 50px;
@@ -612,8 +620,13 @@ footer {
   }
 
   header {
+    width: calc(100% - 30px);
     .mobile-menu-button {
       display: block;
+    }
+
+    &.shadow {
+      top: 10px;
     }
 
     ul.nav-links {
@@ -629,6 +642,10 @@ footer {
       align-items: center;
       gap: 24px;
       z-index: 90;
+      
+      height: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
 
       &.active {
         display: flex;
