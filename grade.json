@@ -46,7 +46,6 @@
     { "time": "12h", "monday": "GB1", "tuesday": "GB1", "wednesday": "GB1", "thursday": "GB1", "friday": "LIVRE" },
     { "time": "17:40", "monday": "GBK1", "tuesday": "GBK1", "wednesday": "GBK1", "thursday": "GBK1", "friday": "GBK1" },
     { "time": "18:20", "monday": "GBK2", "tuesday": "GBK2", "wednesday": "GBK2", "thursday": "GBK2", "friday": "GBK2" },
-    { "time": "18:30", "monday": null, "tuesday": "GBF", "wednesday": null, "thursday": "GBF", "friday": null },
     { "time": "19:30", "monday": "GB1", "tuesday": "GB1", "wednesday": "GB1", "thursday": "GB1", "friday": "LIVRE" },
     { "time": "20:30", "monday": null, "tuesday": "NOGI", "wednesday": null, "thursday": "NOGI", "friday": null }
   ]
