@@ -621,7 +621,7 @@ footer {
 
   header {
     width: calc(100% - 30px);
-    
+
     .mobile-menu-button {
       display: block;
     }
@@ -702,15 +702,37 @@ footer {
       overflow-x: auto;
       font-size: 14px;
       margin: 32px 0;
-      box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3);
+      /* box-shadow: inset -10px 0 10px rgba(0, 0, 0, .3); */
+
+      td {
+        padding: 4px;
+        
+        img {
+          max-width: 45px;
+        }
+      }
+    }
+
+    .schedule-note {
+      font-size: 12px;
+      margin-top: 5px;
+      text-align: center;
     }
 
     /* Remove a largura fixa e adapta a grid para exibir os itens em uma coluna */
     ul.schedule-legend {
       width: 100%;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 4px;
       margin-top: 16px;
+
+      li {
+        padding: 4px;
+
+        img {
+          max-width: 45px;
+        }
+      }
     }
   }
 
