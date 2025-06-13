@@ -1,0 +1,53 @@
+{
+  "classTypes": {
+    "GB1": {
+      "label": "GB-1: Adulto de todas as faixas e gêneros",
+      "imagem": "GB-1.svg",
+      "description": "Adulto Todas as Faixas e Gêneros."
+    },
+    "GB2": {
+      "label": "GB-2: Adulto a partir do 3º grau da Fx. Branca",
+      "imagem": "GB-2.svg",
+      "description": "Adulto a partir do 3º grau da Fx. Branca."
+    },
+    "GBK1": {
+      "label": "GB-K1: Mini e Pequenos Campeões 1 (3 a 6 anos)",
+      "imagem": "GB-K1.svg",
+      "description": "Mini e Pequenos Campeões 1 (3 a 6 anos).<br><small>Obs.: 40min de aula por sessão.</small>"
+    },
+    "GBK2": {
+      "label": "GB-K2: Pequenos Campeões 2 e Juniores (7 a 12 anos)",
+      "imagem": "GB-K2.svg",
+      "description": "Pequenos Campeões 2 e Juniores (7 a 12 anos)."
+    },
+    "GBF": {
+      "label": "GB-F: Turma 100% Feminina",
+      "imagem": "GB-F.svg",
+      "description": "Turma 100% Feminina. (Horários a definir)"
+    },
+    "NOGI": {
+      "label": "GB-NoGi: Treino sem kimono",
+      "imagem": "GB-NoGi.svg",
+      "description": "Treino sem Kimono."
+    },
+    "LIVRE": {
+      "label": "GB-Livre: Treino livre a partir do 3º grau de branca",
+      "imagem": "GB-Livre.svg",
+      "description": "Treino livre a partir do 3º grau de branca."
+    },
+    "OPENMAT": {
+      "label": "GB-OpenMat: Treino livre, aberto aos visitantes",
+      "imagem": "GB-OpenMat.svg",
+      "description": "Treino livre, aberto aos visitantes."
+    }
+  },
+  "schedule": [
+    { "time": "7h", "monday": "GB1", "tuesday": "GB1", "wednesday": "GB1", "thursday": "GB1", "friday": "LIVRE" },
+    { "time": "12h", "monday": "GB1", "tuesday": "GB1", "wednesday": "GB1", "thursday": "GB1", "friday": "LIVRE" },
+    { "time": "17:40", "monday": "GBK1", "tuesday": "GBK1", "wednesday": "GBK1", "thursday": "GBK1", "friday": "GBK1" },
+    { "time": "18:20", "monday": "GBK2", "tuesday": "GBK2", "wednesday": "GBK2", "thursday": "GBK2", "friday": "GBK2" },
+    { "time": "18:30", "monday": null, "tuesday": "GBF", "wednesday": null, "thursday": "GBF", "friday": null },
+    { "time": "19:30", "monday": "GB1", "tuesday": "GB1", "wednesday": "GB1", "thursday": "GB1", "friday": "LIVRE" },
+    { "time": "20:30", "monday": null, "tuesday": "NOGI", "wednesday": null, "thursday": "NOGI", "friday": null }
+  ]
+}

@@ -621,6 +621,7 @@ footer {
 
   header {
     width: calc(100% - 30px);
+    
     .mobile-menu-button {
       display: block;
     }
