@@ -15,29 +15,135 @@ document.addEventListener('DOMContentLoaded', function() {
         throw new Error('Formato de JSON inválido. Faltando "classTypes" ou "schedule".');
       }
       
-      // --- LÓGICA PARA MONTAR A TABELA (sem alterações) ---
-      const corpoTabela = document.querySelector('.schedule-table tbody');
-      if (corpoTabela) {
-        corpoTabela.innerHTML = '';
-        const diasDaSemana = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-        gradeDeAulas.forEach(itemLinha => {
-          const linha = document.createElement('tr');
-          const celulaHorario = document.createElement('th');
-          celulaHorario.textContent = itemLinha.time;
-          linha.appendChild(celulaHorario);
-          diasDaSemana.forEach(dia => {
-            const celulaAula = document.createElement('td');
-            const tipoAulaChave = itemLinha[dia];
+      // --- LÓGICA PARA MONTAR OS CARDS ---
+      const scheduleCards = document.querySelector('.schedule-cards');
+      if (scheduleCards) {
+        scheduleCards.innerHTML = '';
+        
+        const diasDaSemana = [
+          { key: 'monday', nome: 'Segunda' },
+          { key: 'tuesday', nome: 'Terça' },
+          { key: 'wednesday', nome: 'Quarta' },
+          { key: 'thursday', nome: 'Quinta' },
+          { key: 'friday', nome: 'Sexta' }
+        ];
+        
+        // Criar um card para cada dia
+        diasDaSemana.forEach(dia => {
+          const card = document.createElement('div');
+          card.className = 'day-card';
+          
+          // Header do card (nome do dia) - clicável no mobile
+          const header = document.createElement('div');
+          header.className = 'day-header';
+          header.textContent = dia.nome;
+          
+          // Adicionar seta indicadora
+          const arrow = document.createElement('span');
+          arrow.className = 'toggle-arrow';
+          arrow.innerHTML = '▼';
+          header.appendChild(arrow);
+          
+          // Toggle no mobile
+          header.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+              const wasExpanded = card.classList.contains('expanded');
+              
+              // Se o card clicado já está expandido, apenas fecha ele
+              if (wasExpanded) {
+                card.classList.remove('expanded');
+                
+                // Verifica se todos os cards estão fechados agora
+                setTimeout(() => {
+                  const anyExpanded = document.querySelector('.day-card.expanded');
+                  if (!anyExpanded) {
+                    // Todos os cards estão fechados, scrolla para o primeiro card
+                    const firstCard = document.querySelector('.day-card');
+                    if (firstCard) {
+                      const cardRect = firstCard.getBoundingClientRect();
+                      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                      const targetPosition = cardRect.top + scrollTop - 90;
+                      
+                      window.scrollTo({ 
+                        top: targetPosition, 
+                        behavior: 'smooth'
+                      });
+                    }
+                  }
+                }, 420);
+              } else {
+                // Fecha todos os outros cards (efeito sanfona)
+                document.querySelectorAll('.day-card.expanded').forEach(expandedCard => {
+                  expandedCard.classList.remove('expanded');
+                });
+                // Abre o card clicado
+                card.classList.add('expanded');
+                
+                // Aguarda a animação de expansão completar (400ms) e então scrolla para o card
+                setTimeout(() => {
+                  const cardRect = card.getBoundingClientRect();
+                  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                  const targetPosition = cardRect.top + scrollTop - 90;
+                  
+                  window.scrollTo({ 
+                    top: targetPosition, 
+                    behavior: 'smooth'
+                  });
+                }, 420);
+              }
+            }
+          });
+          
+          card.appendChild(header);
+          
+          // Container de aulas
+          const classesContainer = document.createElement('div');
+          classesContainer.className = 'day-classes';
+          
+          // Para cada horário da grade, verificar se existe aula neste dia
+          gradeDeAulas.forEach(itemLinha => {
+            const tipoAulaChave = itemLinha[dia.key];
+            
             if (tipoAulaChave && TiposDeAula[tipoAulaChave]) {
+              // Existe aula neste horário
               const detalhesAula = TiposDeAula[tipoAulaChave];
+              
+              const classItem = document.createElement('div');
+              classItem.className = 'class-item';
+              
+              const timeSpan = document.createElement('span');
+              timeSpan.className = 'class-time';
+              timeSpan.textContent = itemLinha.time;
+              
               const imagem = document.createElement('img');
               imagem.src = `/imgs/${detalhesAula.imagem}`;
               imagem.alt = detalhesAula.label;
-              celulaAula.appendChild(imagem);
+              imagem.title = detalhesAula.label;
+              
+              classItem.appendChild(timeSpan);
+              classItem.appendChild(imagem);
+              classesContainer.appendChild(classItem);
+            // } else {
+            //   // Não existe aula, mas criar espaço vazio para alinhamento
+            //   const emptySlot = document.createElement('div');
+            //   emptySlot.className = 'class-item empty-slot';
+              
+            //   const timeSpan = document.createElement('span');
+            //   timeSpan.className = 'class-time';
+            //   timeSpan.textContent = itemLinha.time;
+              
+            //   const emptyLabel = document.createElement('span');
+            //   emptyLabel.className = 'empty-label';
+            //   emptyLabel.textContent = 'Sem aula';
+              
+            //   emptySlot.appendChild(timeSpan);
+            //   emptySlot.appendChild(emptyLabel);
+            //   classesContainer.appendChild(emptySlot);
             }
-            linha.appendChild(celulaAula);
           });
-          corpoTabela.appendChild(linha);
+          
+          card.appendChild(classesContainer);
+          scheduleCards.appendChild(card);
         });
       }
 
