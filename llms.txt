@@ -1,0 +1,17 @@
+# Gracie Barra Paracambi
+
+> Site oficial da academia Gracie Barra em Paracambi, estado do Rio de Janeiro. A Gracie Barra Paracambi oferece aulas de Jiu-Jitsu para todos os níveis, com foco em Jiu-Jitsu para todos, defesa pessoal e bem-estar físico e mental. O site é projetado com a arquitetura focada em uso intensivo de CSS moderno e APIs declarativas do HTML5 (No-JS First).
+
+A academia faz parte da maior equipe de Jiu-Jitsu do mundo, oferecendo a estrutura padronizada da metodolgia GB (GB1 Fundamentos, GB2 Avançado e GBK para crianças).
+
+## Seções da Plataforma
+- [Início](https://gbparacambi.com.br/): View inicial de impacto da academia.
+- [GB Próximo a Você](https://gbparacambi.com.br/#proposito): Detalhes sobre nossos valores institucionais (Irmandade, Expansão e Integridade).
+- [Nossos Programas](https://gbparacambi.com.br/#metodologia): Informações sobre as estruturas de turmas separadas por idade e nível técnico.
+- [Professores](https://gbparacambi.com.br/#professores): Apresentação do Professor responsável, Michel Xavier.
+- [Aulas](https://gbparacambi.com.br/#grade): Quadro detalhado com a grade de horários dividida por dias da semana e modalidades.
+- [Contato e Localização](https://gbparacambi.com.br/#contato): Endereço exato da filial e botão rápido para conversar via Whatsapp.
+
+## Links Complementares
+- [Instagram Oficial](https://instagram.com/graciebarraparacambi): Feed interativo e novidades diárias da academia.
+- [Whatsapp de Vendas](https://wa.me/5521987864399?text=Bom%20dia!%20Eu%20gostaria%20de%20saber%20mais%20sobre%20o%20curso.%20Obrigado.): Canal direto para agendar aulas experimentais.
