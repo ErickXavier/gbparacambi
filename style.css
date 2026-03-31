@@ -165,6 +165,7 @@ header {
     padding: 0;
     border: none;
     background: transparent;
+    overflow: visible;
 
     display: flex;
     gap: 32px;
@@ -222,7 +223,7 @@ header {
   background: var(--primary-color);
   color: var(--secondary-color) !important;
   padding: 13px 24px;
-  border-radius: 0;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -815,9 +816,6 @@ footer {
         }
       }
     }
-  }
-  .join-button {
-    border-radius: 50px;
   }
 
   .logo-container {
