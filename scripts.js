@@ -25,23 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* Saving the name on localstorage for late retrieval */
-  // Select the name input field
-  var nameInput = document.querySelector('input[name="name"]');
-
-  // Retrieve the stored name from localStorage, if it exists
-  var savedName = localStorage.getItem("savedName");
-  if (savedName) {
-    nameInput.value = savedName;
-  }
-
-  // Add the onblur event to save the name when the field loses focus
-  nameInput.addEventListener("blur", function () {
-    localStorage.setItem("savedName", nameInput.value);
-  });
 });
-
-
 
 // Tratamento do formulário de contato
 document
