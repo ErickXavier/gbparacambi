@@ -1,20 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu elements
-  const menuButton = document.querySelector(".mobile-menu-button");
-  const navLinksContainer = document.querySelector(".nav-links");
-
-  // Toggle the mobile menu when the menu button is clicked
-  menuButton.addEventListener("click", () => {
-    menuButton.classList.toggle("active");
-    navLinksContainer.classList.toggle("active");
-    document.body.style.overflow = navLinksContainer.classList.contains(
-      "active"
-    )
-      ? "hidden"
-      : "";
-  });
-
-  // Select all <a> elements inside the nav links container
+  const navLinksContainer = document.querySelector("#nav-menu");
   const navLinks = navLinksContainer.querySelectorAll("a");
 
   // For each nav link, add a click event to toggle its active class
@@ -26,11 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // Add the active class to the clicked link
       link.classList.add("active");
 
-      // Close the mobile menu (if open) and reset body overflow
-      menuButton.classList.remove("active");
-      navLinksContainer.classList.remove("active");
-      document.body.style.overflow = "";
+      // Close the mobile menu (popover)
+      if (navLinksContainer.matches(":popover-open")) {
+        navLinksContainer.hidePopover();
+      }
     });
+  });
+
+  // Automatically close the mobile popover if the user resizes to desktop width
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && navLinksContainer.matches(":popover-open")) {
+      navLinksContainer.hidePopover();
+    }
   });
 
   /* Saving the name on localstorage for late retrieval */
@@ -49,15 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Efeito de sombra no header
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (window.scrollY > 0) {
-    header.classList.add("shadow");
-  } else {
-    header.classList.remove("shadow");
-  }
-});
+
 
 // Tratamento do formulário de contato
 document

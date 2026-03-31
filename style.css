@@ -71,6 +71,10 @@ a {
   }
 }
 
+body:has(#nav-menu:popover-open) {
+  overflow: hidden;
+}
+
 /* Header and Navigation */
 header {
   padding: 24px 32px;
@@ -78,27 +82,13 @@ header {
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   width: 70%;
   margin: auto;
-  transition: all 0.3s;
   box-shadow: none;
-  border: 0 solid transparent;
-
-  &.shadow {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 10px 32px;
-    top: 20px;
-    border-top: 2px solid rgba(255, 255, 255, .3);
-    border-bottom: 2px solid rgba(0, 0, 0, .1);
-    margin: auto;
-    border-radius: 100px;
-    .logo-container {
-      .logo-img {
-        width: 50px;
-      }
-    }
-  }
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
 
   nav {
     max-width: 1200px;
@@ -117,7 +107,6 @@ header {
       width: 100px;
       aspect-ratio: 1;
       vertical-align: middle;
-      transition: all 0.3s ease-in-out;
     }
 
     .title {
@@ -139,6 +128,7 @@ header {
     cursor: pointer;
     padding: 8px;
     z-index: 100;
+    transition: opacity 0.4s ease;
 
     span {
       display: block;
@@ -149,7 +139,10 @@ header {
       transition: transform 0.3s, opacity 0.3s;
     }
 
-    &.active {
+    nav:has(#nav-menu:popover-open) & {
+      opacity: 0;
+      pointer-events: none;
+      
       span {
         &:nth-child(1) {
           transform: translateY(7px) rotate(45deg);
@@ -165,12 +158,24 @@ header {
   }
 
   ul.nav-links {
+    /* Reset Popover UA styles to force inline desktop rendering */
+    position: static;
+    inset: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+
     display: flex;
     gap: 32px;
     align-items: center;
 
     li {
       list-style: none;
+    }
+
+    .mobile-close-button {
+      display: none;
     }
 
     a {
@@ -183,12 +188,41 @@ header {
   }
 }
 
+@supports (animation-timeline: scroll()) {
+  header {
+    animation: header-shrink linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 100px;
+  }
+  
+  header .logo-container .logo-img {
+    animation: logo-shrink linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 100px;
+  }
+
+  @keyframes header-shrink {
+    to {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 10px 32px;
+      top: 20px;
+      border-top: 2px solid rgba(255, 255, 255, .3);
+      border-bottom: 2px solid rgba(0, 0, 0, .1);
+      border-radius: 100px;
+    }
+  }
+
+  @keyframes logo-shrink {
+    to { width: 50px; }
+  }
+}
+
 /* Join Button */
 .join-button {
   background: var(--primary-color);
   color: var(--secondary-color) !important;
   padding: 13px 24px;
-  border-radius: 50px;
+  border-radius: 0;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -710,32 +744,80 @@ footer {
       display: block;
     }
 
-    &.shadow {
-      top: 10px;
-    }
+
 
     ul.nav-links {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      width: auto;
       background: var(--secondary-color);
+      height: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-top: 2px solid rgba(255, 255, 255, .3);
+      border-bottom: 2px solid rgba(0, 0, 0, .1);
+      border-left: 2px solid rgba(255, 255, 255, .3);
+      border-right: 2px solid rgba(0, 0, 0, .1);
+      border-radius: 30px;
+      margin: 0;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 24px;
-      z-index: 90;
-      
-      height: 400px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 30px;
+      z-index: 1;
 
-      &.active {
+      /* Popover fade-in animation */
+      opacity: 0;
+      transition: opacity 0.4s ease, display 0.4s allow-discrete;
+
+      &:popover-open {
         display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+
+      /* Inner animated close button */
+      .mobile-close-button {
+        display: block;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background-color: var(--primary-color);
+          margin: 5px 0;
+          transition: transform 0.4s ease, opacity 0.4s ease;
+
+          /* Final state inside the open popover: 'X' */
+          &:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+          &:nth-child(2) { opacity: 0; }
+          &:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        }
+      }
+
+      /* When the popover is opening, start the button as a Hamburger! */
+      &:popover-open .mobile-close-button span {
+        @starting-style {
+          &:nth-child(1) { transform: translateY(0) rotate(0); }
+          &:nth-child(2) { opacity: 1; }
+          &:nth-child(3) { transform: translateY(0) rotate(0); }
+        }
       }
     }
+  }
+  .join-button {
+    border-radius: 50px;
   }
 
   .logo-container {
