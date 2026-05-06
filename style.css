@@ -78,8 +78,8 @@ body:has(#nav-menu:popover-open) {
 /* Header and Navigation */
 header {
   padding: 24px 32px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  /* background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px); */
   position: sticky;
   top: 0;
   z-index: 2;
@@ -90,9 +90,28 @@ header {
   border-bottom: 2px solid transparent;
   border-radius: 0;
 
+  /* Specular highlight overlay – rim light (all browsers) */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    clip-path: inset(0 round inherit);
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+
   nav {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,7 +161,7 @@ header {
     nav:has(#nav-menu:popover-open) & {
       opacity: 0;
       pointer-events: none;
-      
+
       span {
         &:nth-child(1) {
           transform: translateY(7px) rotate(45deg);
@@ -195,7 +214,7 @@ header {
     animation-timeline: scroll();
     animation-range: 0px 100px;
   }
-  
+
   header .logo-container .logo-img {
     animation: logo-shrink linear both;
     animation-timeline: scroll();
@@ -215,6 +234,31 @@ header {
 
   @keyframes logo-shrink {
     to { width: 50px; }
+  }
+
+  header::before {
+    animation: glass-specular linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 100px;
+  }
+
+  @keyframes glass-specular {
+    from {
+      background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0)    0%,
+        rgba(255, 255, 255, 0)    40%,
+        rgba(255, 255, 255, 0)    70%
+      );
+    }
+    to {
+      background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.38) 0%,
+        rgba(255, 255, 255, 0.10) 40%,
+        rgba(255, 255, 255, 0)    70%
+      );
+    }
   }
 }
 
@@ -456,7 +500,7 @@ section.schedule {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
+
       .toggle-arrow {
         display: none;
         font-size: 14px;
@@ -498,16 +542,16 @@ section.schedule {
         height: 50px;
         object-fit: contain;
       }
-      
+
       /* &.empty-slot {
         background: transparent;
         opacity: 0.3;
         border: 1px dashed #ccc;
-        
+
         &:hover {
           background: transparent;
         }
-        
+
         .empty-label {
           font-size: 12px;
           font-style: italic;
@@ -870,25 +914,25 @@ footer {
       &:hover {
         transform: none;
       }
-      
+
       .day-header {
         font-size: 18px;
         padding: 12px;
         cursor: pointer;
         user-select: none;
-        
+
         .toggle-arrow {
           display: inline-block !important;
         }
       }
-      
+
       &:not(.expanded) .day-classes {
         max-height: 0;
         padding: 0 12px;
         overflow: hidden;
         opacity: 0;
       }
-      
+
       &.expanded .toggle-arrow {
         transform: rotate(180deg);
       }
